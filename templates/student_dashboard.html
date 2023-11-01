@@ -9,7 +9,8 @@
     <style>
         /* Custom CSS for this page */
         body {
-            background-color: #f8f9fa;
+            /* background-color: #f8f9fa; */
+            background-color: beige;
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
@@ -21,37 +22,45 @@
         .container {
             flex: 1;
             margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
         }
 
         header {
-            background-color: #000000;
-            color: #fff;
+            justify-content: center;
+            display: flex;
             padding: 10px;
+            gap: 10px;
             text-align: center;
+            outline: 1px solid black;
         }
 
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        nav li {
-            display: inline;
-            margin-right: 20px;
-        }
-
-        nav a {
+        header a {
             text-decoration: none;
-            color: #fff;
+            color: #593c02;
+            padding: 10px;
+            /* background-color: #ffa825; */
+            border: 1px solid black;
+            border-radius: 2px;
+            text-decoration: none;
+        }
+
+        header a:hover{
+            background-color: #d8d8d8;
+            /* color: white; */
+            transition-duration: 0.5s;
+            text-decoration: none;
         }
 
         .course-card {
-            border: 1px solid #ccc;
-            border-radius: 5px;
+            border: 1px solid #000000;
+            border-radius: 2px;
             padding: 15px;
-            margin: 10px;
+            margin: 10px auto;
             background-color: #fff;
             position: relative;
+            width: 50%;
         }
 
         .course-title {
@@ -73,15 +82,19 @@
         .subscribe-button {
             background-color: #007BFF;
             color: #fff;
-            border: none;
-            padding: 10px;
-            border-radius: 5px;
+            border: 0px solid black;
+            padding: 5px 10px;
+            /* border-radius: 8px; */
+            border-radius: 2px;
             cursor: pointer;
+            font-size: 15px;
             margin-top: 10px;
+            margin-right: 5px;
         }
 
         .subscribe-button:hover {
             background-color: #0056b3;
+            transition-duration: 0.1s;
         }
 
         .student-courses {
@@ -98,18 +111,11 @@
         }
 
         .search-bar {
-            margin: 20px 0;
+            margin: 0px auto 20px auto;
             padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            width: 100%;
-        }
-
-        .footer {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 10px;
+            border: 1px solid #000000;
+            border-radius: 2px;
+            width: 50%;
         }
     </style>
 </head>
@@ -117,14 +123,9 @@
 <body>
     <!-- Header -->
     <header>
-        <h1>Online Learning Platform</h1>
-        <nav>
-            <ul>
-                <li><a href="{{ url_for('home') }}">Home</a></li>
-                <li><a href="{{ url_for('subscribed') }}">subscribed</a></li>
-                <li><a href="{{ url_for('home') }}">Logout</a></li>
-            </ul>
-        </nav>
+        <a href="{{ url_for('home') }}">Home</a>
+        <a href="{{ url_for('subscribed') }}">subscribed</a>
+        <a href="{{ url_for('home') }}">Logout</a>
     </header>
 
     <div class="container">
@@ -133,25 +134,20 @@
 
         <!-- Display available courses -->
         <div class="course-card">
-            <div class="course-title">C Programming</div>
+            <div class="course-title">Python Programming</div>
             <div class="course-description">
-                C is a powerful, low-level, and procedural programming language known for its efficiency and
-                portability.
-                It is widely used in system programming and offers fine control over hardware and memory. Pointers are a
-                fundamental concept in C, and it has a standard library for common tasks. It remains popular in various
-                domains and has a large community of developers.
+                Python is a versatile and widely used high-level programming language known for its simplicity and readability. It has gained immense popularity in the world of software development, data science, web development, and more, thanks to its extensive standard library and a thriving community of developers. Python's elegant and clean syntax, combined with its robust support for various programming paradigms, such as object-oriented, functional, and procedural programming, makes it an excellent choice for both beginners and experienced programmers.
             </div>
 
-            <button class="btn btn-secondary subscribe-button" onclick="initiatePayPalPayment(1, 'C Programming', 0.00)"
+            <button class="subscribe-button" onclick="initiatePayPalPayment(1, 'C Programming', 0.00)"
                 disabled>Subscribe</button>
         </div>
 
         <!-- Repeat similar structure for other courses -->
         <div class="course-card" data-course-id="2">
-            <div class="course-title" onclick="toggleCourseInfo(2)">C++ Programming</div>
+            <div class="course-title" onclick="toggleCourseInfo(2)">SQL</div>
             <div class="course-description">
-                <span id="description-2">Explore an extension of C with strong support for object-oriented programming.
-                    Known for performance, low-level memory control, and a large community.</span>
+                <span id="description-2">Structured Query Language (SQL) is a powerful and widely used domain-specific programming language designed for managing and manipulating relational databases. SQL allows users to interact with databases to perform tasks such as querying data, inserting, updating, and deleting records, as well as creating and modifying database structures. Its declarative nature enables users to specify what data they want and let the database engine figure out how to retrieve it efficiently. SQL is a crucial tool for data professionals, software developers, and business analysts, facilitating data retrieval and management across a wide range of applications and industries.</span>
             </div>
             <div class="course-price">
                 <span id="price-3">$59.99</span>
@@ -171,14 +167,12 @@
               </form> --->
 
         <div class="course-card" data-course-id="3">
-            <div class="course-title" onclick="toggleCourseInfo(3)">Java Programming</div>
+            <div class="course-title" onclick="toggleCourseInfo(3)">Flask</div>
             <div class="course-description">
-                <span id="description-3">Platform-independent, pure object-oriented language with automatic memory
-                    management, a comprehensive standard library, and a focus on security. Popular for enterprise
-                    applications and Android development.</span>
+                <span id="description-3">Flask is a lightweight and versatile web framework for Python that has gained popularity for its simplicity and flexibility. Developed by Armin Ronacher, Flask is designed to make web application development straightforward and efficient. It offers essential tools and libraries for building web applications, allowing developers to focus on writing clean and concise code while providing the flexibility to add components and extensions as needed. Flask's minimalist design, known as "micro," makes it an excellent choice for small to medium-sized projects and prototypes, and it has a thriving community and ecosystem of extensions, making it a popular choice for web developers seeking a rapid and customizable solution for their web application needs.</span>
             </div>
             <div class="course-price">
-                <span id="price-3">$59.99</span>
+                <span id="price-3">$100.98</span>
             </div>
            
                 <button class="subscribe-button"
@@ -196,10 +190,10 @@
     </div>
 
 
-   
+<!--    
     <div class="footer">
         &copy; 2023 CHANDU S GOWDA. All rights reserved.
-    </div>
+    </div> -->
 
     <script>
         // JavaScript code for the student dashboard

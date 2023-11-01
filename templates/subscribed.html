@@ -7,7 +7,7 @@
     <style>
         /* Custom CSS for this page */
         body {
-            background-color: #f8f9fa;
+            background-color: beige;
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
@@ -22,10 +22,20 @@
         }
 
         header {
-            background-color: #000000;
-            color: #fff;
+            /* background-color: #000000; */
+            color: #000000;
             padding: 10px;
             text-align: center;
+            outline: 1px solid black;
+            /* display: flex; */
+        }
+
+        header h2{
+            /* outline: 1px solid black; */
+            /* text-align: center; */
+            margin-bottom: 25px;
+            font-size: 21px;
+            font-weight: bold;
         }
 
         nav ul {
@@ -38,18 +48,32 @@
             margin-right: 20px;
         }
 
-        nav a {
+        nav a{
+            color: #000000;
+            padding: 10px;
+            /* background-color: #ffa825; */
+            border: 1px solid black;
+            border-radius: 2px;
             text-decoration: none;
-            color: #fff;
+        }
+
+        a:hover{
+            background-color: #d8d8d8;
+            /* color: white; */
+            transition-duration: 0.5s;
+            text-decoration: none;
         }
 
         .course-card {
-            border: 1px solid #ccc;
-            border-radius: 5px;
+            border: 1px solid #000000;
+            border-radius: 2px;
             padding: 15px;
-            margin: 10px;
+            margin: 10px auto;
             background-color: #fff;
             position: relative;
+            transition-duration: 5s;
+            background-color: #fff9ef;
+            width: 50%;
         }
 
         .course-title {
@@ -60,7 +84,13 @@
 
         .course-description {
             margin-top: 10px;
+            font-size: 16px;
             display: none;
+        }
+
+        .course-description h3{
+            font-size: 18px;
+            font-weight: bold;
         }
 
         .course-price {
@@ -70,13 +100,14 @@
         }
 
         .view-course-button {
-            background-color: #007BFF;
+            background-color: #65b0ff;
             color: #fff;
-            border: none;
-            padding: 10px;
-            border-radius: 5px;
+            border: 1px solid black;
+            padding: 5px;
+            border-radius: 2px;
             cursor: pointer;
             margin-top: 10px;
+            font-size: 15px;
         }
 
         .view-course-button:hover {
@@ -96,11 +127,16 @@
         /* Updated styling for prerequisites */
         .course-prerequisites {
             display: none;
-            border: 1px solid #ddd;
-            border-radius: 5px;
+            border: 1px solid #000000;
+            border-radius: 2px;
             padding: 10px;
             margin-top: 10px;
-            background-color: #f7f7f7;
+            background-color: #fffcf8;;
+        }
+
+        .course-prerequisites h3{
+            font-size: 18px;
+            font-weight: bold;
         }
 
         .footer {
@@ -115,7 +151,7 @@
 <body>
     <!-- Header -->
     <header>
-        <h1>Subscribed Courses</h1>
+        <h2>Subscribed Courses</h2>
         <nav>
             <ul>
                 <li><a href="{{ url_for('student_dashboard') }}">Home</a></li>
@@ -127,7 +163,7 @@
     <div class="container">
         <!-- Display subscribed course card for C Programming -->
         <div class="course-card" data-course-id="c">
-            <div class="course-title" onclick="toggleCourseContent('c')">C Programming</div>
+            <div class="course-title" onclick="toggleCourseContent('c')">Python Programming</div>
             <button class="btn btn-primary view-course-button" onclick="toggleCourseContent('c')">View Course</button>
 
             <!-- Additional content (initially hidden) -->
@@ -135,12 +171,12 @@
                 <h3>Course Description</h3>
                 <p>This comprehensive course covers the following topics:</p>
                 <ul>
-                    <li>Introduction to C programming</li>
+                    <li>Introduction to Python programming</li>
                     <li>Data types and variables</li>
                     <li>Control structures (if, else, loops)</li>
                     <li>Functions and modular programming</li>
-                    <li>Arrays and pointers</li>
                     <li>File handling</li>
+                    <li>OOPs</li>
                 </ul>
             </div>
 
@@ -152,19 +188,18 @@
 
         <!-- Display subscribed course card for C++ Programming -->
         <div class="course-card" data-course-id="cpp">
-            <div class="course-title" onclick="toggleCourseContent('cpp')">C++ Programming</div>
+            <div class="course-title" onclick="toggleCourseContent('cpp')">SQL</div>
             <button class="btn btn-primary view-course-button" onclick="toggleCourseContent('cpp')">View Course</button>
 
             <!-- Additional content (initially hidden) -->
             <div class="course-description">
                 <h3>Course Description</h3>
-                <p>This course explores an extension of C with strong support for object-oriented programming. It is known for its performance, low-level memory control, and a large community.</p>
+                <p>This course explores SQL and its basic concepts for begibbers.</p>
                 <ul>
                     <li>Object-oriented programming concepts</li>
                     <li>Classes and objects</li>
                     <li>Inheritance and polymorphism</li>
                     <li>Templates and the Standard Template Library (STL)</li>
-                    <li>Exception handling</li>
                     <li>Memory management</li>
                 </ul>
             </div>
@@ -174,10 +209,6 @@
                 <p>No prior programming experience is required, but a basic understanding of computer science concepts is helpful.</p>
             </div>
         </div>
-    </div>
-
-    <div class="footer">
-        &copy; 2023 CHANDU S GOWDA. All rights reserved.
     </div>
 
     <script>

@@ -4,11 +4,9 @@
 <head>
     <title>Teacher Login</title>
     <style>
-        /* Add custom CSS for the sign-up form and footer */
         body {
             font-family: Arial, sans-serif;
-            background-color: #f8f9fa;
-            /* Light gray background */
+            background-color: beige;
             margin: 0;
             padding: 0;
             display: flex;
@@ -17,28 +15,22 @@
         }
 
         header {
-            background-color: #000000;
-            color: #fff;
-            padding: 10px;
+            /* background-color: #ffffff; */
+            color: #000000;
+            padding: 25px;
             text-align: center;
-        }
-
-        nav ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        nav ul li {
-            display: inline;
-            margin-right: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            /* outline: 1px solid black; */
         }
 
         .container {
             flex-grow: 1;
-            margin: 50px;
-            padding: 100px;
+            margin: 100px auto;
+            padding: 50px;
             background-color: #fff;
-            border-radius: 15px;
+            border-radius: 2px;
+            border: 1px solid black;
+            max-width: 300px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
@@ -50,12 +42,12 @@
             text-size-adjust: 30px;
         }
 
-        /* Style the sign-up form */
         form {
+            text-align: left;
             display: flex;
             flex-direction: column;
-            max-width: 300px;
-            margin: 0 auto;
+            width: 300px;
+            margin: auto auto;
         }
 
         h2 {
@@ -63,53 +55,59 @@
         }
 
         a{
-            color: #f8f9fa;
+            color: #000000;
+            padding: 10px;
+            border-radius: 2px;
+            border:1px solid black;
+            text-decoration: none;
+        }
+
+        a:hover{
+            background-color: #d8d8d8;
+            /* color: white; */
+            transition-duration: 0.5s;
         }
 
         input[type="email"],
         input[type="password"] {
             margin: 10px 0;
             padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
+            border: 2px solid black;
+            border-radius: 2px;
+            font-size: 16px;
         }
 
         button {
-            background-color: #007BFF;
+            background-color: #12c42a;
             color: #fff;
             border: none;
             padding: 10px;
-            border-radius: 5px;
-            cursor: pointer;
+            border-radius: 2px;
+            cursor: pointer;margin: 10px 0px;
+            width: fit-content;
+            float: left;
+            width: 98px;
+            font-size: 16px;
+            float: right;
         }
 
         button:hover {
-            background-color: #0056b3;
+            background-color: #186022;
+            transition-duration: 0.2s;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Online Learning Platform</h1>
-        <nav>
-            <ul>
-                <li><a href="{{ url_for('home') }}">Home</a></li>
-            </ul>
-        </nav>
+        <a href="{{ url_for('home') }}">Home</a>
     </header>
     <div class="container">
-        
         <h2>Teacher Login</h2>
         <form action="{{ url_for('teacher_login') }}" method="post">
             <input type="email" name="email" placeholder="Email" required>
             <input type="password" name="password" placeholder="Password" required>
             <button type="submit">Login</button>
         </form>
-
     </div>
-    <!-- Footer -->
-    <footer>
-        &copy; 2023 Chandu S Gowda. All rights reserved.
-    </footer>
 </body>
 </html>

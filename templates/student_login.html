@@ -6,7 +6,7 @@
         /* Add custom CSS for the sign-up form and footer */
         body {
             font-family: Arial, sans-serif;
-            background-color: #f8f9fa;
+            background-color: beige;
             /* Light gray background */
             margin: 0;
             padding: 0;
@@ -16,10 +16,11 @@
         }
 
         header {
-            background-color: #000000;
+            /* background-color: #000000; */
             color: #fff;
             padding: 10px;
-            text-align: center;
+            /* text-align: center; */
+            outline: 1px solid black;
         }
 
         nav ul {
@@ -34,61 +35,72 @@
 
         .container {
             flex-grow: 1;
-            margin: 50px;
-            padding: 100px;
+            margin: 100px auto;
+            padding: 50px;
             background-color: #fff;
-            border-radius: 15px;
+            border-radius: 2px;
+            border: 1px solid black;
+            max-width: 300px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        footer {
-            background-color: #333;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
         }
 
         /* Style the sign-up form */
         form {
+            text-align: left;
             display: flex;
             flex-direction: column;
-            max-width: 300px;
-            margin: 0 auto;
+            width: 300px;
+            margin: auto auto;
         }
 
         h2 {
-            text-align: center;
+            /* text-align: center; */
+            margin: 10px 0px;
         }
 
         a{
-            color: #f8f9fa;
+            color: #000000;
+            padding: 10px;
+            border: 1px solid black;
+            border-radius: 2px;
+            text-decoration: none;
+        }
+
+        a:hover{
+            background-color: #d8d8d8;
+            transition-duration: 0.5s;
         }
 
         input[type="email"],
         input[type="password"] {
             margin: 10px 0;
             padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
+            border: 2px solid black;
+            border-radius: 2px;
+            font-size: 16px;
         }
 
         button {
-            background-color: #007BFF;
+            background-color: #12c42a;
             color: #fff;
             border: none;
             padding: 10px;
-            border-radius: 5px;
-            cursor: pointer;
+            border-radius: 2px;
+            cursor: pointer;margin: 10px 0px;
+            width: fit-content;
+            float: left;
+            width: 98px;
+            font-size: 16px;
         }
 
         button:hover {
-            background-color: #0056b3;
+            background-color: #186022;
+            transition-duration: 0.2s;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Online Learning Platform</h1>
         <nav>
             <ul>
                 <li><a href="{{ url_for('home') }}">Home</a></li>
@@ -105,8 +117,5 @@
 
     </div>
     <!-- Footer -->
-    <footer>
-        &copy; 2023 Chandu S Gowda. All rights reserved.
-    </footer>
 </body>
 </html>

@@ -11,7 +11,7 @@ import webbrowser
 
 app = Flask(__name__)
 # Replace with a strong secret key
-app.config['SECRET_KEY'] = 'your_secret_key'
+app.config['SECRET_KEY'] = 'EJZu9_3WOrV7V0PvK9rYUV9pqJh4GRX80Uh4jUhbcPmM9FMPan1JGp6bKNi7lZu4mMUyDdKFTCPEMEhO'
 # Use SQLite for simplicity
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
 db = SQLAlchemy(app)
@@ -100,7 +100,7 @@ def verify2():
 
 def send_otp_email(to_email, otp):
     msg = MIMEMultipart()
-    msg['From'] = 'your_email@gmail.com'
+    msg['From'] = 'chandan562002s@gmail.com'
     msg['To'] = to_email
     msg['Subject'] = 'Verification OTP'
 
@@ -122,8 +122,8 @@ def send_otp_email(to_email, otp):
     server.starttls()
     
     # Replace with your email and password
-    server.login('sendermail@gmail.com', 'password')
-    server.sendmail('your_email@gmail.com', to_email, msg.as_string())
+    server.login('chandan562002s@gmail.com', 'vbdl ezme ylvq vvxz')
+    server.sendmail('chandan562002@gmail.com', to_email, msg.as_string())
     server.quit()
 
 
@@ -209,10 +209,10 @@ def teacher_login():
 
 
 def send_new_course_email( email_content):
-    email_address = 'sendermail@gmail.com'  # Your Gmail email address
-    app_password = 'password'  # Your app-specific password
+    email_address = 'chandan562002s@gmail.com'  # Your Gmail email address
+    app_password = 'vbdl ezme ylvq vvxz'  # Your app-specific password
 
-    to_email = 'bond3811007@gmail.com'  # Recipient's email address
+    to_email = 'srinivaschandankumar@gmail.com'  # Recipient's email address 
 
  
     message = MIMEMultipart()
@@ -242,7 +242,8 @@ def send_email():
 def start_npm():
     try:
         # Replace 'your_frontend_project_path' with the actual path to your frontend project
-        frontend_project_path = r'C:\Users\CHANDU S GOWDA\OneDrive\Desktop\Online'
+        frontend_project_path =  r'C:\Users\CHANDAN\Desktop\onlinelearningplatform-main'
+
 
         # Change the current working directory to the frontend project path
         os.chdir(frontend_project_path)

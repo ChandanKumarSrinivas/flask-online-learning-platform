@@ -6,7 +6,7 @@
         /* Add custom CSS for the Verify OTP page */
         body {
             font-family: Arial, sans-serif;
-            background-color: #f8f9fa;
+            background-color: beige;
             /* Light gray background */
             margin: 0;
             padding: 0;
@@ -23,20 +23,23 @@
         }
 
         .container {
-            margin: 50px;
-            padding: 100px;
-            background-color: #fff;
-            border-radius: 15px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             flex-grow: 1;
+            margin: 100px auto;
+            padding: 50px;
+            background-color: #fff;
+            border-radius: 2px;
+            border: 1px solid black;
+            max-width: 300px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
         /* Style the Verify OTP form */
         form {
+            text-align: left;
             display: flex;
             flex-direction: column;
-            max-width: 300px;
-            margin: 0 auto;
+            width: 300px;
+            margin: auto auto;
         }
 
         h2 {
@@ -46,37 +49,31 @@
         input[type="text"] {
             margin: 10px 0;
             padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
+            border: 2px solid black;
+            border-radius: 2px;
+            font-size: 16px;
         }
 
         button {
-            background-color: #007BFF;
+            background-color: #12c42a;
             color: #fff;
             border: none;
             padding: 10px;
-            border-radius: 5px;
-            cursor: pointer;
+            border-radius: 2px;
+            cursor: pointer;margin: 10px 0px;
+            width: fit-content;
+            float: right;
+            width: 98px;
+            font-size: 16px;
         }
 
         button:hover {
-            background-color: #0056b3;
-        }
-
-        footer {
-            background-color: #333;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
+            background-color: #186022;
+            transition-duration: 0.2s;
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <h1>Online Learning Platform</h1>
-    </header>
-
     <div class="container">
         <h2>Verify OTP</h2>
         <form action="{{ url_for('verify1') }}" method="post">
@@ -84,12 +81,5 @@
             <button type="submit">Verify</button>
         </form>
     </div>
-
-    <!-- Footer -->
-    <footer>
-        &copy; 2023 Chandu S Gowda. All rights reserved.
-    </footer>
-
-    
 </body>
 </html>
